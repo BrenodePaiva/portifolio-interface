@@ -3,9 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import Pagination from '@mui/material/Pagination'
 import Stack from '@mui/material/Stack'
 
-import Eu from '../../assets/foto-eu-pensi.png'
-// import Eu from '../../assets/foto-eu-serio.png'
-// import Eu from '../../assets/foto-eu-sorri.png'
+import Eu from '../../assets/perfil-sorri.png'
+
 import SkillBarProgress from '../../components/SkillBarProgress'
 import { fadeIn } from '../../services/framerMotion'
 import {
