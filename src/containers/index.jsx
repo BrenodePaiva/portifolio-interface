@@ -1,0 +1,5 @@
+export * from './Home'
+export * from './Login'
+export * from './ForgotPass'
+export * from './ResetPass'
+export * from './Admin'
