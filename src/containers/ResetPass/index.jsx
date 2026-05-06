@@ -39,7 +39,7 @@ export function ResetPass() {
 
   const formSubmit = async formData => {
     const { data } = await toast.promise(
-      api.patch(`reset-password/${token}`, {
+      api.post(`reset-password/${token}`, {
         password: formData.password
       }),
       {
