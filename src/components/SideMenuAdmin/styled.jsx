@@ -6,15 +6,15 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import breakPoints from '../../styles/breakPoints'
 
 export const Container = styled.div`
-  position: relative;
+  position: fixed;
   z-index: 5;
   background-color: #3c3c3c;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.15);
-  width: 300px;
-  min-height: 100vh;
+  width: 232px;
+  height: 100%;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow-y: auto;
   transition: width 0.5s ease-in-out;
 
   svg {
@@ -35,8 +35,7 @@ export const Container = styled.div`
   }
 
   @media ${breakPoints.Xbig} {
-    position: absolute;
-    width: ${props => (props['data-is-mobile'] ? '300px' : '50px')};
+    width: ${props => (props['data-is-mobile'] ? '232px' : '50px')};
 
     .warp {
       margin-left: ${props => (props['data-is-mobile'] ? '8px' : '-300px')};

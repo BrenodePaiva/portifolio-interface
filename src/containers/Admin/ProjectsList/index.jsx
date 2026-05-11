@@ -115,7 +115,7 @@ function ProjectsList() {
     <>
       {!rows.length && <LoadingSpinner size={120} />}
       {rows.length > 0 && (
-        <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+        <Paper sx={{ width: '100%', overflow: 'hidden', height: '100%' }}>
           <SerachBox>
             <form>
               <SearchIcon className="search-icon" color="action" />

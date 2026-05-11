@@ -2,10 +2,14 @@ import styled from 'styled-components'
 import breakPoints from '../../styles/breakPoints'
 
 export const Container = styled.div`
-  display: flex;
+  padding-left: 232px;
   min-height: 100vh;
   width: calc(100vw - 15px);
   background: #efefef;
+
+  @media ${breakPoints.Xbig} {
+    padding-left: 0px;
+  }
 `
 
 export const ContainerItems = styled.div`
