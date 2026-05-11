@@ -249,11 +249,10 @@ export function Home() {
               <img src={Eu} />
 
               <p>
-                Olá! Sou desenvolvedor Full Stack, com experiência em HTML, CSS,
-                JavaScript e React. Gosto de criar interfaces, responsivas e
-                acessíveis. Procuro otimizar ao máximo meus códigos, com base no
-                meu conhecimento, sempre atento aos detalhes e às boas práticas
-                de programação.
+                Desenvolvedor Full Stack com experiência em React, Next.js, 
+                Tailwind CSS, Node.js e desenvolvimento de interfaces modernas e responsivas.
+                Tenho foco em criar aplicações organizadas, acessíveis e com boa experiência 
+                para o usuário, sempre seguindo boas práticas de programação
               </p>
             </BoxAbout>
           </motion.div>
