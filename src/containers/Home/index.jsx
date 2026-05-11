@@ -196,7 +196,11 @@ export function Home() {
           </motion.div>
 
           <SocialHome>
-            <LinkSocial>
+            <LinkSocial
+              to="https://www.linkedin.com/in/brenodepaiva"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.div
                 variants={fadeIn('left', 0.8, 0)}
                 initial="hidden"
@@ -206,7 +210,11 @@ export function Home() {
                 <LinkedinStyled />
               </motion.div>
             </LinkSocial>
-            <LinkSocial>
+            <LinkSocial 
+              to="https://github.com/BrenodePaiva"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.div
                 variants={fadeIn('left', 1.2, 0)}
                 initial="hidden"
@@ -252,10 +260,12 @@ export function Home() {
 
           <ProgreBar>
             <div>
-              <SkillBarProgress title={'HTML'} porcent={'90%'} />
-              <SkillBarProgress title={'HTML'} porcent={'90%'} />
-              <SkillBarProgress title={'HTML'} porcent={'50%'} />
-              <SkillBarProgress title={'HTML'} porcent={'90%'} />
+              <SkillBarProgress title={'React'} porcent={'90%'} level={'Avançado'} />
+              <SkillBarProgress title={'Next.js'} porcent={'80%'} level={'Avançado'} />
+              <SkillBarProgress title={'Tailwind'} porcent={'80%'} level={'Avançado'} />
+              <SkillBarProgress title={'Node.js'} porcent={'75%'} level={'Avançado'} />
+              <SkillBarProgress title={'PostgreSQL'} porcent={'65%'} level={'Intermediário'} />
+              <SkillBarProgress title={'PHP'} porcent={'45%'} level={'Básico'} />
             </div>
           </ProgreBar>
         </AboutSection>

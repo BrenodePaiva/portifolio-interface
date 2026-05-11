@@ -5,7 +5,7 @@ import { SkillBox, Title, SkillBar, Tooltip } from './styled'
 import { useEffect, useRef, useState } from 'react'
 import CountUp from 'react-countup'
 
-function SkillBarProgress({ title, porcent }) {
+function SkillBarProgress({ title, porcent, level }) {
   const countRef = useRef(null)
   const isInView = useInView(countRef, { once: true })
   const [count, setCount] = useState(false)
@@ -30,7 +30,7 @@ function SkillBarProgress({ title, porcent }) {
             viewport={{ once: true }}
           >
             <Tooltip ref={countRef}>
-              {count && (
+              {/* {count && (
                 <CountUp
                   start={0}
                   end={number}
@@ -39,7 +39,9 @@ function SkillBarProgress({ title, porcent }) {
                   useEasing={false}
                   suffix="%"
                 />
-              )}
+              )} */}
+             
+               {level}
             </Tooltip>
           </motion.span>
         </SkillBar>
@@ -50,7 +52,8 @@ function SkillBarProgress({ title, porcent }) {
 
 SkillBarProgress.propTypes = {
   title: PropTypes.string,
-  porcent: PropTypes.string
+  porcent: PropTypes.string,
+  level: PropTypes.string
 }
 
 export default SkillBarProgress
