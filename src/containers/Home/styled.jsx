@@ -378,6 +378,7 @@ export const TextProjetc = styled.div`
     overflow-wrap: break-word;
     hyphens: auto;
     -webkit-hyphens: auto;
+    white-space: pre-line;
   }
 `
 const move = keyframes`
