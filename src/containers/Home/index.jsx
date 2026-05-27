@@ -152,7 +152,7 @@ export function Home() {
     <Container>
       <HeaderPage>
         <LeftPage>
-          <h1 style={{ color: '#fff' }}>Portifólio</h1>
+          <h1 style={{ color: '#fff' }}>Portfólio</h1>
         </LeftPage>
 
         <NavPage open={toggleIcon}>
