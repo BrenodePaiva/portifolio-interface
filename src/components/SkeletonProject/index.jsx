@@ -10,12 +10,7 @@ import { Skeleton } from '@mui/material'
 function SkeletonProject() {
     return (
         
-        <motion.li
-            variants={fadeIn('right', 0.5, 0)}
-            initial="hidden"
-            whileInView={'show'}
-            viewport={{ once: true, amount: 0.3 }}
-        >
+        <motion.li>
             <BoxProject>
                 <Skeleton variant="rectangular" animation="wave" width={300} height={191}/>
                 <TextProjetc>
