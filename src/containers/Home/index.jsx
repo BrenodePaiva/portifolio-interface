@@ -47,6 +47,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { toast } from 'react-toastify'
 import Path from '../../constants/Path'
 import { Link } from 'react-router-dom'
+import SkeletonProject from '../../components/SkeletonProject'
 
 export function Home() {
   useEffect(() => {
@@ -75,6 +76,7 @@ export function Home() {
   const [categories, setCategories] = useState([])
   const [activeCategory, setActiveCategory] = useState(0)
   const [projects, setProjects] = useState([])
+  const [loadProjects, setLoadProjects] = useState(false)
   const [pagination, setPagination] = useState()
   const [page, setPage] = useState(1)
 
@@ -92,18 +94,25 @@ export function Home() {
 
   const setActive = id => {
     setActiveCategory(id)
+    setPage(1)
   }
 
   useEffect(() => {
     async function loadProjects() {
-      const { data } = await api.get(
-        `projects?page=${page}&cat=${activeCategory}`
-      )
-
-      setProjects(data.projects)
-      setPagination(data.pagination)
+      try {
+        setLoadProjects(true)
+        const { data } = await api.get(
+          `projects?page=${page}&cat=${activeCategory}`
+        )
+        setProjects(data.projects)
+        setPagination(data.pagination)
+      }
+     catch (error) {
+      alert('Erro ao carregar os projetos ' + error.message)
+    }finally {
+      setLoadProjects(false)
     }
-
+  }
     loadProjects()
   }, [page, activeCategory])
 
@@ -301,14 +310,19 @@ export function Home() {
 
         <ServiceSection>
           <ContentProject>
-            {projects.map(proj => (
-              <motion.li
+            {loadProjects ? (
+              Array.from({ length: 3 }).map((_, i) => (
+                <SkeletonProject key={i}/>
+              ))
+            ): (
+              projects.map(proj => (
+                <motion.li
                 variants={fadeIn('right', 0.5, 0)}
                 initial="hidden"
                 whileInView={'show'}
                 viewport={{ once: true, amount: 0.3 }}
                 key={proj.id}
-              >
+                >
                 <BoxProject>
                   <img src={proj.url} />
                   <TextProjetc>
@@ -318,14 +332,15 @@ export function Home() {
                       to={proj.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                    >
+                      >
                       <p>Ver projeto</p>
                       <ArraowStyled />
                     </LinkStyled>
                   </TextProjetc>
                 </BoxProject>
               </motion.li>
-            ))}
+            ))
+          )}
           </ContentProject>
           <motion.div
             variants={fadeIn('right', 0.5, 0)}
